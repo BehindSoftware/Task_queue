@@ -2,7 +2,7 @@
 #include "queue.h"
 
 
-int Task_dequeue( tsk_node_s *headPtr, tsk_node_s *tailPtr, tsk_node_s *node )
+int Task_dequeue( Tsk_node_s *headPtr, Tsk_node_s *tailPtr, Tsk_node_s *node )
 {
 	int value;
 	tsk_node_s tempPtr;
@@ -19,27 +19,27 @@ int Task_dequeue( tsk_node_s *headPtr, tsk_node_s *tailPtr, tsk_node_s *node )
 	return value;
 }
 
-void Task_enqueue( tsk_node_s *headPtr, tsk_node_s *tailPtr, tsk_node_s *node )
+void Task_enqueue(Tsk_node_s *headPtr, Tsk_node_s *tailPtr, Tsk_node_s *node)
 {
-	tsk_node_s newPtr;
+	Tsk_node_s newPtr;
 
-	newPtr = malloc( sizeof( tsk_node_s ) );
+	newPtr = malloc(sizeof(Tsk_node_s));		//create new ptr for task
 
-	if ( newPtr != NULL ){
-		newPtr->data = node->value;
-		newPtr->nextPtr = NULL;
+	if(newPtr != NULL){				//if malloc is successful
+		newPtr->data = node->value;		//my task data assingning...
+		newPtr->nextPtr = NULL;			//nextPtr is not certain yet.
 
-		if ( isEmpty( *headPtr ) ) {
-			*headPtr = newPtr;
+		if(isEmpty( *headPtr)){			//control whether first node is exist
+			*headPtr = newPtr;			//this is first, right
 		}
 		else {
-			( *tailPtr )->nextPtr = newPtr;
+			(*tailPtr)->nextPtr = newPtr;		//this is not first, so connect to tail
 		}
 
-		*tailPtr = newPtr;
+		*tailPtr = newPtr;	//our node should be tail
 	}
 	else {
-		printf("%c not inserted.No memory available.\n", value );
+		printf("%c not inserted.No memory available.\n", value );	//malloc is unsuccessful
 	}
 
 }
