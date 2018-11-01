@@ -24,9 +24,9 @@ typedef Tsk_node_s *TskNodePtr;
 
 
 /* List operations */
-int Insert(int value);
-int Search(int value);
-int Delete(int value);
+int Insert(LstNodePtr *sPtr, int value);
+int Search(LstNodePtr *sPtr, int value);
+int Delete(LstNodePtr *sPtr, int value);
 
 /* Task queue functions */
 void Task_queue(int n); //generate n random tasks for the task queue
