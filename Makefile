@@ -4,7 +4,7 @@ CC=gcc
 CFLAGS=-c -Wall
 
 all: queue
-
+	
 queue: queue.o
 	$(CC) queue.o -o queue
 

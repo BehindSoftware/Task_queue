@@ -3,8 +3,8 @@
 
 /* Struct for list nodes */
 struct lst_node_s {
-int data;
-struct lst_node_s* next;
+	int data;
+	struct lst_node_s* next;
 };
 
 typedef struct lst_node_s Lst_node_s;
@@ -12,10 +12,10 @@ typedef Lst_node_s *LstNodePtr;
 
 /* Struct for task nodes */
 struct tsk_node_s {
-int task_num; //starting from 0
-int task_type; // insert:0, delete:1, search:2
-int value;
-struct tsk_node_s* next;
+	int task_num; //starting from 0
+	int task_type; // insert:0, delete:1, search:2
+	int value;
+	struct tsk_node_s* next;
 };
 
 typedef struct tsk_node_s Tsk_node_s;
